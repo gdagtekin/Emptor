@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Emptor</string>
+    <string name="facebook_app_id">1896279490637047</string>
+    <string name="userName">Name: </string>
+    <string name="userBirthday">Birthday: </string>
+    <string name="userGender">Gender: </string>
+    <string name="userFriends">Your Friend List</string>
+    <string name="userLikes">Your Likes List</string>
+
+    <string name="logout">Log out</string>
+    <string name="profilPage">Profile</string>
+    <string name="pageFriends">Friends</string>
+    <string name="pageLikes">Likes</string>
+    <string name="male">Male</string>
+    <string name="female">Female</string>
+</resources>

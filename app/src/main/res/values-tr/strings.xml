@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Emptor</string>
+    <string name="facebook_app_id">1896279490637047</string>
+    <string name="logout">Çıkış</string>
+    <string name="pageFriends">Arkadaşlar</string>
+    <string name="pageLikes">Beğeniler</string>
+    <string name="userBirthday">"Doğum Tarihi: "</string>
+    <string name="userFriends">Arkadaş Listesi</string>
+    <string name="userGender">"Cinsiyet: "</string>
+    <string name="userLikes">Beğeni Listesi</string>
+    <string name="userName">"Ad: "</string>
+    <string name="profilPage">Profil</string>
+    <string name="female">Kadın</string>
+    <string name="male">Erkek</string>
+</resources>
