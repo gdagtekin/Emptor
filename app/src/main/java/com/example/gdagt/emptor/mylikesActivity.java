@@ -43,9 +43,9 @@ public class mylikesActivity extends AppCompatActivity {
                             JSONArray jsonArray = response.getJSONObject().getJSONArray("data");
                             for (int i = 0; i < 20; i++) {
                                 JSONObject object = jsonArray.getJSONObject(i);
-                                String isimler = object.getString("name");
+                                String names = object.getString("name");
                                 ListItem2 item = new ListItem2();
-                                item.setTitle(isimler);
+                                item.setTitle(names);
                                 listData.add(item);
                                 adapter.notifyItemInserted(listData.indexOf(item));
                             }

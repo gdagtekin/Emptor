@@ -18,9 +18,9 @@ import com.facebook.login.LoginManager;
 
 
 public class profile extends AppCompatActivity {
-    TextView tvAdSoyad, tvDogumTarihi, tvCinsiyet;
-    ImageView imageView;
-    public static String paket = "com.gdagt.emptor";
+    private TextView tvAdSoyad, tvDogumTarihi, tvCinsiyet;
+    private ImageView imageView;
+    private static String paket = "com.gdagt.emptor";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,9 +47,6 @@ public class profile extends AppCompatActivity {
     }
 
     public void getData() {
-        //Bundle b = getIntent().getExtras();
-        //String name = getIntent().getStringExtra("names");
-        //Toast.makeText(this, name, Toast.LENGTH_SHORT).show();
         tvAdSoyad.setText(getSharedPreferences(paket + ".maindata", MODE_PRIVATE).getString(paket + ".name", "null"));
         String cinsiyet = (getSharedPreferences(paket + ".maindata", MODE_PRIVATE).getString(paket + ".gender", "null"));
         if (cinsiyet.equalsIgnoreCase("male")) {

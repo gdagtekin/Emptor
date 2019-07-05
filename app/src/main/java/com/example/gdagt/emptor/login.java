@@ -31,11 +31,11 @@ import java.net.URL;
 import java.util.Arrays;
 
 public class login extends AppCompatActivity {
-    LoginButton loginButton;
-    TextView textView;
-    CallbackManager callbackManager;
-    SharedPreferences sharedPreferences;
-    SharedPreferences.Editor editor;
+    private LoginButton loginButton;
+    private TextView textView;
+    private CallbackManager callbackManager;
+    private SharedPreferences sharedPreferences;
+    private SharedPreferences.Editor editor;
     public static String paket = "com.gdagt.emptor";
 
     @Override
@@ -75,7 +75,7 @@ public class login extends AppCompatActivity {
                                             + object.getString("id") + "/picture?type=large");
                                     new login.downloadImage().execute(String.valueOf(imageURL));
                                 } catch (Exception e) {
-                                    Log.e("HATA", e.getMessage());
+                                    Log.e("myErrorTag", e.getMessage());
                                 }
                             }
                         });
@@ -114,7 +114,7 @@ public class login extends AppCompatActivity {
         Intent intent = new Intent(this, profile.class);
         /*intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
-        intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);*/ //Activity stack olmaması için bunlar kullanılabilir
+        intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);*/ //For activity stack
         startActivity(intent);
     }
 
@@ -135,7 +135,7 @@ public class login extends AppCompatActivity {
                 editor.commit();
 
             } catch (Exception e) {
-                Log.e("HATA", e.getMessage());
+                Log.e("myErrorTag", e.getMessage());
             }
             return image;
         }

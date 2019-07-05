@@ -24,14 +24,12 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.io.IOException;
 import java.io.InputStream;
-import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
 
 public class myfriendsActivity extends AppCompatActivity {
-    ImageView imageView;
+    private ImageView imageView;
     private RecyclerView recView;
     private DerpAdapter adapter;
     private ArrayList listData;
@@ -55,7 +53,7 @@ public class myfriendsActivity extends AppCompatActivity {
                 new GraphRequest.Callback() {
                     @Override
                     public void onCompleted(GraphResponse response) {
-                        Log.v("Dikkat", response.toString());
+                        Log.v("myErrorTag", response.toString());
 
                         try {
 
@@ -72,36 +70,17 @@ public class myfriendsActivity extends AppCompatActivity {
                                 int son = imageUrl.lastIndexOf("\"");
                                 imageUrl = imageUrl.substring(bas, son);
                                 imageUrl = imageUrl.replace("\\", "");
-                                URL URLImage = new URL(imageUrl);
-                                String url = new String("http://rs86.pbsrc.com/albums/k82/seanp_music/icons%2050px/sidebar_soundcloud-1.png~c200");
-                                //Bitmap bitmap=new downloadImage().doInBackground(imageUrl);
-                                //Bitmap bitmap = BitmapFactory.decodeStream(URLImage.openConnection().getInputStream());
-                               /* Bitmap bitmap;
-                                InputStream in=new URL(imageUrl).openStream();
-                                bitmap= BitmapFactory.decodeStream(in);*/
-                                //  item.setBitmap(bitmap);
-                                // foo(imageUrl);
-                                foo(imageUrl);
+
+                                getPhoto(imageUrl);
 
                                 listData.add(item);
                                 adapter.notifyItemInserted(listData.indexOf(item));
                                 Log.w("Dikkat", isimler);
                                 Log.v("Dikkat", imageUrl);
                                 Log.v("Dikkat", id);
-                                // Picasso.with(getApplicationContext()).load(imageUrl).into(imageView);
 
                             }
-                            /// String ad="https://graph.facebook.com/"+id+"/picture?type=small";
-
-                            //InputStream in=new URL(url).openStream();
-                           /* Bitmap bitmap= BitmapFactory.decodeStream((InputStream) new URL("http://rs86.pbsrc.com/albums/k82/seanp_music/icons%2050px/sidebar_soundcloud-1.png~c200").getContent());
-                            imageView.setImageBitmap(bitmap);*/
-
                         } catch (JSONException e) {
-                            e.printStackTrace();
-                        } catch (MalformedURLException e) {
-                            e.printStackTrace();
-                        } catch (IOException e) {
                             e.printStackTrace();
                         }
                     }
@@ -115,7 +94,7 @@ public class myfriendsActivity extends AppCompatActivity {
         public void onBitmapLoaded(Bitmap bitmap, Picasso.LoadedFrom from) {
 
             imageView.setImageBitmap(bitmap);
-            Log.v("Dikkat", "Bitti");
+            Log.v("myErrorTag", "Done");
         }
 
         @Override
@@ -129,7 +108,7 @@ public class myfriendsActivity extends AppCompatActivity {
         }
     };
 
-    void foo(String url) {
+    private void getPhoto(String url) {
         Picasso.with(getApplicationContext()).load(url).into(target);
     }
 
@@ -144,7 +123,7 @@ public class myfriendsActivity extends AppCompatActivity {
 
 
             } catch (Exception e) {
-                Log.w("HATA", "fotoğraf hata");
+                Log.w("myErrorTag", "Photo error");
             }
             return image;
         }
